@@ -1,0 +1,7 @@
+#!/bin/bash
+
+CFG="$HOME/.config/eww/sleektop"
+EWW="$HOME/More/eww/target/release/eww"
+${EWW} daemon
+sleep 1
+${EWW} --config "$CFG" open-many right_window left_window
