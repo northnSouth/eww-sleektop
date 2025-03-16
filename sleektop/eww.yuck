@@ -1,3 +1,8 @@
+;; TODO:
+;; - Fix bug where elements are displaced when text contents become too long
+;; - Fix bug where during spotify advertisement, artist column shows Spotify is Offline
+;; - Add visualizer feature under the album art
+
 ;; user name getter
 (defpoll user :interval "5m"
     `getent passwd "$USER" | cut -d ':' -f 5 | cut -d ',' -f 1`
