@@ -14,7 +14,7 @@ calc_bar() {
         result+="$FILL_CHAR"
     done
 
-    if [[ $BAR_LENGTH -gt $BAR_FILL ]]; then result+="$EDGE_CHAR"; fi
+    if [ $BAR_LENGTH -gt $BAR_FILL ]; then result+="$EDGE_CHAR"; fi
 
     for ((i = 1; i < $BAR_LENGTH - BAR_FILL; i++)); do
         result+="$BLANK_CHAR"

@@ -1,6 +1,4 @@
 ;; TODO:
-;; - Fix bug where elements are displaced when text contents become too long
-;; - Fix bug where during spotify advertisement, artist column shows Spotify is Offline
 ;; - Add visualizer feature under the album art
 
 ;; user name getter
@@ -86,8 +84,8 @@
              :vexpand "false" :hexpand "false"
             
             (box :orientation "vertical" :spacing -140
-                (label :class "spotify-title" :halign "end" :text "${spotify-title != '' ? spotify-title : 'N/A'}")
-                (label :class "spotify-artist" :halign "end" :text "${spotify-artist != '' ? spotify-artist : 'Spotify is offline'}")
+                (label :class "spotify-title" :halign "end" :text "${spotify-title ?: 'N/A'}")
+                (label :class "spotify-artist" :halign "end" :text "${spotify-artist ?: (spotify-title != '' ? 'Advertisement' : 'Spotify is Offline')}")
             )
             (box :class "spotify-art" 
                  :style "background-image: url('${spotify-art}'), url('images/spotify-art-default.png');")
